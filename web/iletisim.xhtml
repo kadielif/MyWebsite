@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+      >
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <meta name="author" content="Elif Kadi"/>
+        <title> anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background: #979394;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                margin-top:20px;
+
+                color:#ffffff;
+                background-color:#979394;
+                text-align:center;
+
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <div id="branding">
+                        <h1><span class="highlight">IUC</span> RENT A CAR</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li ><a href="index.xhtml">ANASAYFA</a></li> 
+                            <li ><a href="hakkimizda.xhtml">HAKKIMIZDA</a></li> 
+                            <li class="current"><a href="iletisim.xhtml">ILETISIM</a></li>
+                            <li><a href="profil.xhtml">#{giris.tc}</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <br></br><br></br>
+            <section id="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12047.462030811725!2d28.725619799999993!3d40.98442575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1a9851dd8b1%3A0x1221fb6d2da743aa!2zxLBzdGFuYnVsIMOcbml2ZXJzaXRlc2ktQ2VycmFocGHFn2EgTGlzYW5zw7xzdMO8IEXEn2l0aW0gRW5zdGl0w7xzw7w!5e0!3m2!1str!2str!4v1556890553751!5m2!1str!2str" 
+                        width="100%" height="400px" align="center" frameborder="0" style="border:0">
+
+                </iframe>
+            </section>
+
+            <br></br><br></br>
+
+            <br></br><br></br>
+            <section id="showcase1" style="background: #979394;  ;">
+                <div class="container" >
+                    <h:form>
+                        <h:outputStylesheet library="css" name="style.css"/>
+                        <h:dataTable value="#{iletisimKayitCek.addresses}" 
+                                     var="kayitCekObjesi" 
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     style="width:50%;
+                                     border-bottom:#white solid;">
+
+                            <h:column>
+                                <f:facet name="header"> TELEFON </f:facet>
+
+                                <h:outputText value="#{kayitCekObjesi.tel}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> FAX </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.fax}"/>
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header"> ADRES </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.adres}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> EMAİL </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.mail}"/>
+                            </h:column>
+
+
+
+
+
+                        </h:dataTable>
+
+                    </h:form>
+
+                </div>
+
+            </section>
+
+
+            <br></br><br></br>
+
+
+            <footer>
+                <p>iu@rentacar.com</p>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>
+

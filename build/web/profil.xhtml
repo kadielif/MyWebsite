@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <meta name="author" content="Elif Kadi"/>
+        <title> anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background: #979394;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                margin-top:20px;
+
+                color:#ffffff;
+                background-color:#979394;
+                text-align:center;
+
+            }
+            .form{
+                color: black;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <div id="branding">
+                        <h1><span class="highlight">IUC</span> RENT A CAR</h1>
+                    </div>
+                    <nav>
+                       <ul>
+                            <li ><a href="index.xhtml">ANASAYFA</a></li> 
+                            <li ><a href="hakkimizda.xhtml">HAKKIMIZDA</a></li> 
+                            <li><a href="iletisim.xhtml">ILETISIM</a></li>
+                            <li><a href="giris.xhtml">ÇIKIŞ YAP</a></li>
+                            
+                           						
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+
+            <br></br><br></br>
+
+            <br></br><br></br>
+            <section id="showcase1" style="background: #979394;  ;">
+                <div class="container" >
+                    <h3>KİSİ BİLGİLERİ</h3>
+
+                    <h:form >
+                        <h:dataTable style=" margin: left ; background-color: grey;" value="#{profil.address}" var="a"
+                                     styleClass = "employeeTable"
+                                     headerClass = "employeeTableHeader"
+                                     rowClasses = "employeeTableOddRow,employeeTableEvenRow" border="2" width="100%" >
+
+                            <h:column>    				
+                                <f:facet name = "header">TC</f:facet>    
+                                    #{a.tc}
+                            </h:column>
+
+                            <h:column>    				
+                                <f:facet name = "header">AD</f:facet>    
+                                    #{a.ad}
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name = "header">SOYAD</f:facet>
+                                    #{a.soyad}
+                            </h:column>
+                            <h:column>
+                                <f:facet name = "header">MAIL</f:facet>
+                                    #{a.mail}
+                            </h:column>
+
+
+
+                        </h:dataTable>
+                    </h:form>
+                </div>
+
+            </section>
+            
+               <br></br><br></br>
+                  <br></br><br></br>
+
+            <section id="showcase" style="background: #979394;  ;">
+                <div class="container" align="left">
+                    <h3>YENİ ŞİFRE </h3>
+                    <h:form class="form">
+                        <h:outputText value="TC: " />
+                        <h:inputText id="tc" value="#{giris.tc}" ></h:inputText>
+                        <h:message for="tc"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="YENİ ŞİFRE: " />
+                        <h:inputSecret id="sifre" value="#{giris.sifre}"></h:inputSecret>
+                        <h:message for="sifre"></h:message>
+                        <br></br><br></br>
+
+                        <h:commandButton action="#{giris.guncelle}" value="GÜNCELLE"></h:commandButton>
+                        <br></br><br></br>
+
+                    </h:form>
+                </div>
+                 <div class="container" align="left">
+                     
+                     <br></br>
+                    <h3>KİRALADIĞIM ARAÇLAR </h3>
+                    <h:form>
+
+                        <h:outputStylesheet library="css" name="style.css"/>
+                        <h:dataTable value="#{profil.addresses}" 
+                                     var="a" 
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     border="2" 
+                                     style="width:100%;
+                                     text-align: left;
+
+                                     ">
+
+                            <h:column>
+                                <f:facet name="header"> Plaka: </f:facet>
+                                <h:outputText value="#{a.plaka}"/>
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header"> Marka: </f:facet>
+                                <h:outputText value="#{a.marka}"/>
+                            </h:column>
+                            
+                              <h:column>
+                                <f:facet name="header"> Model: </f:facet>
+                                <h:outputText value="#{a.model}"/>
+                            </h:column>
+                            
+                            <h:column>
+                                <f:facet name="header"> Yakit: </f:facet>
+                                <h:outputText value="#{a.yakit}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Fiyat(Saat): </f:facet>
+                                <h:outputText value="#{a.saat}"/>
+                            </h:column>
+
+                          
+
+
+
+
+                        </h:dataTable>
+
+                    </h:form>
+                </div>
+
+
+            </section>
+
+
+    
+
+
+            <br></br><br></br>
+
+
+            <footer>
+                <p>iu@rentacar.com</p>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <meta name="author" content="Elif Kadi"/>
+        <title> anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <style>
+            .kayitol{
+                margin-top: 70px;
+                border:grey solid;
+                margin-right: 0px;
+       
+            }
+            
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1><span class="highlight">IUC</span> RENT A CAR</h1>
+                </div>
+                <nav>
+                    
+                </nav>
+            </div>
+        </header>
+
+        <section id="showcase">
+            <div class="container">
+                <div class="kayitol">
+                    <h:form>
+                        <h3>Login</h3>
+                        <h:outputText value="TC: " />
+                        <h:inputText id="tc" value="#{giris.tc}"></h:inputText>
+                        <h:message for="tc"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="Password: " />
+                        
+                        <h:inputSecret id="sifre" value="#{giris.sifre}"></h:inputSecret>
+                        <h:message for="sifre"></h:message>
+                        <br></br><br></br>
+
+                        <h:commandButton action="#{giris.girisYap}" value="Login"></h:commandButton>
+                        <br></br><br></br>
+
+                        <h:outputText value="Bir hesabınız yoksa hesap oluşturmak için butona basınız: " />
+                        <br></br><br></br>
+                        <h:commandButton action="#{giris.KayitOl}" value="Sign Up"> </h:commandButton>
+
+                    </h:form>
+                </div>
+            </div>
+        </section>
+        
+
+
+    </h:body>
+</html>

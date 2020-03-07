@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <meta name="author" content="Elif Kadi"/>
+        <title> anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <style>
+
+            .kayit{
+                margin-top: 70px;
+                border:grey solid;
+                margin-right: 0px;
+
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1><span class="highlight">IUC</span> RENT A CAR</h1>
+                </div>
+                <nav>
+                   
+                </nav>
+            </div>
+        </header>
+        <section id="showcase">
+            <div class="container">
+                <div class="kayit">
+                    <h:form>
+                        <h3>Login</h3>
+                        <h:outputText value="TC: " />
+                        <h:inputText id="tc" value="#{kayit.tc}"></h:inputText>
+                        <h:message for="tc"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="Name: " />
+                        <h:inputText id="ad" value="#{kayit.ad}"></h:inputText>
+                        <h:message for="ad"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="Surname: " />
+                        <h:inputText id="soyad" value="#{kayit.soyad}"></h:inputText>
+                        <h:message for="soyad"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="Email: " />
+                        <h:inputText id="mail" value="#{kayit.mail}"></h:inputText>
+                        <h:message for="mail"></h:message>
+                        <br></br><br></br>
+
+
+                        <h:outputText value="Sifre: " />
+                        <h:inputSecret id="sifre" value="#{kayit.sifre}"></h:inputSecret>
+                        <h:message for="sifre"></h:message>
+                        <br></br><br></br>
+
+                        <h:commandButton action="#{kayit.kaydet}"
+                                         value="KAYIT"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+        </section>
+    </h:body>
+</html>
+

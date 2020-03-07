@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-with" />
+        <meta name="description" content="Affordable and professional web design"/>
+        <meta name="keywords" content="web design" />
+        <meta name="author" content="Elif Kadi"/>
+        <title> anasayfa </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background: #979394;
+            }
+            .kayitol{
+
+                margin-top: 70px;
+                padding: 10px;
+                border:white solid;
+                margin-right: 0px;
+
+
+            }
+
+            footer{
+                padding:20px;
+                margin-top:20px;
+
+                color:#ffffff;
+                background-color:#979394;
+                text-align:center;
+
+            }
+            .container1{
+                border:grey solid;
+                padding: 50px;
+            }
+            .form input{
+                color: black;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="all">
+            <header>
+
+                <div class="container">
+                    <div id="branding">
+                        <h1><span class="highlight">IUC</span> RENT A CAR</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                              <li ><a href="index.xhtml">ANASAYFA</a></li> 
+                            <li ><a href="hakkimizda.xhtml">HAKKIMIZDA</a></li> 
+                            <li ><a href="iletisim.xhtml">ILETISIM</a></li>
+                            <li><a href="profil.xhtml">#{giris.tc}</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+
+            <br></br><br></br>
+            <section id="showcase"  >
+                <h3>Araç Ekle</h3>
+                <div class="container1" align="left" >
+                    <h:form class="form">
+
+                        <h:outputText value="ID: " />
+                        <h:inputText id="id"  value="#{arac.id}"></h:inputText>
+                        <h:message for="id"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="MARKA: " />
+                        <h:inputText id="marka" value="#{arac.marka}"></h:inputText>
+                        <h:message for="marka"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="PLAKA: " />
+                        <h:inputText id="plaka" value="#{arac.plaka}"></h:inputText>
+                        <h:message for="plaka"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="FİYAT: " />
+                        <h:inputText id="fiyat" value="#{arac.fiyat}"></h:inputText>
+                        <h:message for="fiyat"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="YAKIT: " />
+                        <h:inputText id="yakit" value="#{arac.yakit}"></h:inputText>
+                        <h:message for="yakit"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="DETAY: " />
+                        <h:inputText id="detay" value="#{arac.detay}"></h:inputText>
+                        <h:message for="detay"></h:message>
+                        <br></br><br></br>
+
+
+                        <h:outputText value="MODEL: " />
+                        <h:inputText id="model" value="#{arac.model}"></h:inputText>
+                        <h:message for="model"></h:message>
+                        <br></br><br></br>
+
+                        <h:outputText value="STOK: " />
+                        <h:inputText id="stok" value="#{arac.stok}"></h:inputText>
+                        <h:message for="stok"></h:message>
+                        <br></br><br></br>
+
+                        <h:commandButton action="#{arac.ekle}"
+                                         value="ARACI VERİTABANINA EKLE"></h:commandButton>
+                    </h:form>
+                </div>
+
+
+            </section>
+            <br></br><br></br>
+
+            <section id="showcase" style="background: #979394;  ">
+                <h3>ARAC SILME</h3>
+                <div class="container1"  style="align:left; " >
+                    <h:form>
+
+                        <h:outputStylesheet library="css" name="style.css"/>
+                        <h:dataTable value="#{kayitCek3.addresses}" 
+                                     var="kayitCekObjesi" 
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     border="2" 
+                                     style="width:100%;
+                                     text-align: left;
+
+                                     ">
+
+                            <h:column>
+                                <f:facet name="header"> Marka: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.marka}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Plaka: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.plaka}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Yakit: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.yakit}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Fiyat(Saat): </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.fiyat}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"> Detay:</f:facet>
+                                <h:outputText value="#{kayitCekObjesi.detay}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"> Model: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.model}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Seç: </f:facet>
+                                <h:commandButton action="#{kayitCek3.sil(kayitCekObjesi.model)}"
+                                                 value="SIL  " > </h:commandButton>
+                            </h:column>
+
+
+                        </h:dataTable>
+
+                    </h:form>
+
+                </div>
+                <br> </br> <br> </br>
+                <h3>GUNCELLE</h3>
+                <div class="container1"  align="left">
+                    <h:form class="form">
+                        <H4>Guncellemek istediğiniz aracın id sini girinz.</H4>
+
+                        <h:outputText value="ID: " />
+                        <h:inputText id="id" value="#{arac.id}"></h:inputText>
+                        <h:message for="id"></h:message>
+                        <br></br><br></br>
+                        <br></br><br></br>
+
+                        <H4>Guncellemek istediğiniz aracın yeni özelliklerini giriniz</H4>
+                        <h:outputText value="DETAY: " />
+                        <h:inputText id="detay" value="#{arac.detay}"></h:inputText>
+                        <h:message for="detay"></h:message>
+                        <br></br><br></br>
+
+                         <h:outputText value="FİYAT: " />
+                        <h:inputText id="fiyat" value="#{arac.fiyat}"></h:inputText>
+                        <h:message for="fiyat"></h:message>
+                        <br></br><br></br>
+                   
+
+                        <h:outputText value="STOK: " />
+                        <h:inputText id="stok" value="#{arac.stok}"></h:inputText>
+                        <h:message for="stok"></h:message>
+                        <br></br><br></br>
+
+                        <h:commandButton action="#{arac.guncelle}"
+                                         value="ARAC OZELLİKLERİNİ GUNCELLE"></h:commandButton>
+                    </h:form>
+                </div>
+
+            </section>
+            <section id="showcase">
+                <H3>TÜM ARAÇLAR </H3>
+                <div class="container1"  style="align:left; " >
+                    <h:form>
+
+                        <h:outputStylesheet library="css" name="style.css"/>
+                        <h:dataTable value="#{kayitCek3.addresses}" 
+                                     var="kayitCekObjesi" 
+                                     styleClass="order-table"
+                                     headerClass="order-table-header"
+                                     rowClasses="order-table-odd-row,order-table-even-row"
+                                     border="2" 
+                                     style="width:100%;
+                                     text-align: left;
+
+                                     ">
+
+                            <h:column>
+                                <f:facet name="header"> Marka: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.marka}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Plaka: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.plaka}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Yakit: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.yakit}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"> Fiyat(Saat): </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.fiyat}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"> Detay:</f:facet>
+                                <h:outputText value="#{kayitCekObjesi.detay}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"> Model: </f:facet>
+                                <h:outputText value="#{kayitCekObjesi.model}"/>
+                            </h:column>
+
+
+
+
+                        </h:dataTable>
+
+                    </h:form>
+
+                </div>
+            </section>
+
+
+
+
+            <br></br><br></br>
+
+
+            <footer>
+                <p>iu@rentacar.com</p>
+            </footer>    
+
+        </div>
+    </h:body>
+</html>
+
